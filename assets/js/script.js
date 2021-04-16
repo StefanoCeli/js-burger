@@ -10,7 +10,7 @@ var default_price=50;
 var lista_coupon=['sconto2021','sconto-bool'];
 var discount= 0.2;
 
-
+//creo gli eventi
 scriviPrezzo(default_price,price)
 
 button.addEventListener('click',function(){
@@ -38,16 +38,6 @@ button.addEventListener('click',function(){
   }
   
 })
-
-
-
-
-
-
-
-
-
-
 
 function scriviPrezzo(value,target){
   target.innerHTML=value.toFixed(2);
