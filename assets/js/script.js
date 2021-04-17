@@ -19,15 +19,15 @@ button.addEventListener('click',function(){
   if(burger_inserito.length === 0){
     alert('Inserisci il nome per il tuo hamburger');
   }else{
-    var prezzo_ingrediente=0;
-    for(var i=0; i<lista_ingredienti.length; i++){
+    var add_ingredient=cicloArr(lista_ingredienti);
+    /* for(var i=0; i<lista_ingredienti.length; i++){
       var ingrediente=lista_ingredienti[i];
       if(ingrediente.checked){
         prezzo_ingrediente += parseInt(ingrediente.value);
         console.log(default_price)
       }  
-    }
-    var prezzo_totale= default_price + prezzo_ingrediente;
+    } */
+    var prezzo_totale= default_price + add_ingredient;
 
     if(lista_coupon.includes(coupon_inserito.value)){
       prezzo_totale -= prezzo_totale * discount;
@@ -38,6 +38,18 @@ button.addEventListener('click',function(){
   }
   
 })
+
+function cicloArr(arr){
+  var prezzo_ingrediente=0;
+  for(var i=0; i<arr.length; i++){
+    var ingrediente=arr[i];
+    if(ingrediente.checked){
+      prezzo_ingrediente += parseInt(ingrediente.value);
+      console.log(default_price)
+    }  
+  }
+  return prezzo_ingrediente
+}
 
 function scriviPrezzo(value,target){
   target.innerHTML=value.toFixed(2);
